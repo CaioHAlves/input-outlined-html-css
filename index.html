@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .input-group {
+      font-size: 1.25rem;
+      position: relative;
+      --primary: #2196f3;
+      --seconday: #2076bc;
+    }
+
+    .input {
+      all: unset;
+      color: #000;
+      padding: 0 1rem;
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      min-height: 48px;
+    }
+
+    .label {
+      position: absolute;
+      top: 0.75rem;
+      left: 1rem;
+      color: #c1c1c1;
+      pointer-events: none;
+      transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .input:focus {
+      border: 1px solid var(--primary);
+    }
+    .input:is(:focus, :valid) ~ label {
+      transform: translateY(-99%) translateX(-20%) scale(0.7);
+      background-color: #FFF;
+      /* border-radius: 50%; */
+      padding-inline: 0.3rem;
+      color: var(--seconday);
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <div class="input-group">
+    <input class="input" required type="text" id="username"/>
+    <label class="label" for="username">Username</label>
+  </div>
+</body>
+</html>
